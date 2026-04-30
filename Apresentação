@@ -1,0 +1,21 @@
+Análise Passo a Passo do Algoritmo
+Limpeza de Dados: A linha cpf = ''.join(filter(str.isdigit, cpf)) é crucial pois remove qualquer caractere que não seja número. Isso garante que, mesmo que o usuário digite o CPF com pontos e traço (ex: 123.456.789-09), a função trabalhe apenas com os dígitos necessários
+.
+Validação de Estrutura: O código verifica se o CPF tem exatamente 11 dígitos e se não consiste em uma sequência de números iguais (como "11111111111"), condições que invalidam o documento imediatamente
+.
+Cálculo do Primeiro Dígito Verificador:
+O algoritmo utiliza os 9 primeiros dígitos
+.
+Cada dígito é multiplicado por pesos decrescentes de 10 a 2
+.
+O resultado da soma dessas multiplicações é multiplicado por 10 e dividido por 11 para obter o resto. Se esse resto for 10 ou mais, o dígito torna-se 0
+.
+Cálculo do Segundo Dígito Verificador:
+O processo é repetido, mas agora engloba os 10 primeiros dígitos
+.
+Os pesos utilizados variam de 11 a 2
+.
+A mesma regra matemática de multiplicação e resto da divisão é aplicada para definir o segundo dígito
+.
+Validação Final: A função termina comparando os dois dígitos calculados com os dois últimos dígitos do CPF informado (cpf[-2:]). Se forem iguais, o CPF é considerado matematicamente válido
+.
