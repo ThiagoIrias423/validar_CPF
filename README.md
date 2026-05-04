@@ -24,4 +24,4 @@ Este projeto implementa uma função robusta para validar CPFs brasileiros, gara
 🚀 Exemplo de Uso
 
 if validar_cpf('123.456.789-00'):
-    print('Válido'
+    print('Inválido'
